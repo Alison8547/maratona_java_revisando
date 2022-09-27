@@ -1,6 +1,12 @@
 # Created by https://www.toptal.com/developers/gitignore/api/intellij,netbeans,eclipse,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=intellij,netbeans,eclipse,visualstudiocode
 
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
 ### Eclipse ###
 .metadata
 bin/
