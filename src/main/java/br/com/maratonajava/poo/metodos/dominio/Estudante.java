@@ -1,4 +1,4 @@
-package br.com.maratonajava.poo.domain;
+package br.com.maratonajava.poo.metodos.dominio;
 
 public class Estudante {
     private String name;
@@ -13,6 +13,12 @@ public class Estudante {
     }
 
     public Estudante() {
+    }
+
+    public void imprime() {
+        System.out.println(this.name); // this -> tô fazendo uma referência ao atributo da class
+        System.out.println(this.idade);
+        System.out.println(this.sexo);
     }
 
     @Override

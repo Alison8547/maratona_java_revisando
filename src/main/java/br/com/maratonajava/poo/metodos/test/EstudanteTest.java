@@ -1,6 +1,6 @@
-package br.com.maratonajava.poo.test;
+package br.com.maratonajava.poo.metodos.test;
 
-import br.com.maratonajava.poo.domain.Estudante;
+import br.com.maratonajava.poo.metodos.dominio.Estudante;
 
 public class EstudanteTest {
     public static void main(String[] args) {
