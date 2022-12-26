@@ -5,6 +5,10 @@ public class Pessoa {
     protected String cpf;
     protected Endereco endereco;
 
+    public Pessoa(String nome) {
+        this.nome = nome;
+    }
+
     public void imprimir() {
         System.out.printf("Nome: %s%nCpf: %s%nEndereco -> Rua: %s | Cep: %s%n", this.nome, this.cpf, this.endereco.getRua(), this.endereco.getCep());
     }
