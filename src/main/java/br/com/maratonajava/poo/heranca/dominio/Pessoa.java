@@ -1,9 +1,9 @@
 package br.com.maratonajava.poo.heranca.dominio;
 
 public class Pessoa {
-    private String nome;
-    private String cpf;
-    private Endereco endereco;
+    protected String nome;
+    protected String cpf;
+    protected Endereco endereco;
 
     public void imprimir() {
         System.out.printf("Nome: %s%nCpf: %s%nEndereco -> Rua: %s | Cep: %s%n", this.nome, this.cpf, this.endereco.getRua(), this.endereco.getCep());
