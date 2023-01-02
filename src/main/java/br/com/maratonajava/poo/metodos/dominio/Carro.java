@@ -1,4 +1,4 @@
-package br.com.maratonajava.poo.domain;
+package br.com.maratonajava.poo.metodos.dominio;
 
 public class Carro {
     private String name;
