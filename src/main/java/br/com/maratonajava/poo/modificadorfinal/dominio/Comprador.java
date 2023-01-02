@@ -1,4 +1,4 @@
-package br.com.maratonajava.poo.modificadorfinal;
+package br.com.maratonajava.poo.modificadorfinal.dominio;
 
 public class Comprador {
     private String nome;
