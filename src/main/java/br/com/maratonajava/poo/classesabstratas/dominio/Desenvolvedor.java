@@ -1,0 +1,21 @@
+package br.com.maratonajava.poo.classesabstratas.dominio;
+
+public class Desenvolvedor extends Funcionario {
+
+    public Desenvolvedor(String nome, Double salario) {
+        super(nome, salario);
+    }
+
+    @Override
+    public void calculaBonus() {
+        this.salario = this.salario + this.salario * 0.05;
+    }
+
+    @Override
+    public String toString() {
+        return "Desenvolvedor{" +
+                "nome='" + nome + '\'' +
+                ", salario=" + salario +
+                '}';
+    }
+}
