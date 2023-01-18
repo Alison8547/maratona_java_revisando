@@ -1,4 +1,4 @@
-package br.com.maratonajava.serializacao;
+package br.com.maratonajava.serializacao.dominio;
 
 public class Turma {
     private String nome;

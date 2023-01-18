@@ -1,7 +1,5 @@
 package br.com.maratonajava.serializacao.dominio;
 
-import br.com.maratonajava.serializacao.Turma;
-
 import java.io.*;
 
 public class Aluno implements Serializable {

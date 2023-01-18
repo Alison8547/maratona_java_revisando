@@ -1,6 +1,6 @@
 package br.com.maratonajava.serializacao.test;
 
-import br.com.maratonajava.serializacao.Turma;
+import br.com.maratonajava.serializacao.dominio.Turma;
 import br.com.maratonajava.serializacao.dominio.Aluno;
 
 import java.io.IOException;
