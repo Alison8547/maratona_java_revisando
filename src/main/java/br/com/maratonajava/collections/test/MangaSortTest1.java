@@ -15,6 +15,14 @@ class MangaComparatorId implements Comparator<Manga> {
     }
 }
 
+class MangaComparatorPreco implements Comparator<Manga> {
+
+    @Override
+    public int compare(Manga o1, Manga o2) {
+        return Double.compare(o1.getPreco(), o2.getPreco());
+    }
+}
+
 public class MangaSortTest1 {
     public static void main(String[] args) {
         List<Manga> mangaList = new ArrayList<>();
