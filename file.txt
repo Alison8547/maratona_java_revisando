@@ -1,7 +1,4 @@
-Olá mundo Java!
-Olá mundo Java!
-Olá mundo Java!
-Olá mundo Java!
-Olá mundo Java!
-Olá mundo Java!
-Olá mundo Java!
+Java é legal
+Java vai me dá um futuro
+Python é bom
+Oracle é um banco de dados

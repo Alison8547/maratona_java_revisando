@@ -6,34 +6,26 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class StreamsTest1 {
+public class StreamsTest3 {
     private static List<LightNovels> lightNovelsList = new ArrayList<>(List.of(
             new LightNovels("Kurama", 1.99),
             new LightNovels("Akira", 5.43),
             new LightNovels("Maide", 2.34),
             new LightNovels("Mamatsu", 6.43),
             new LightNovels("Orogatami", 1.22),
+            new LightNovels("Orogatami", 1.22),
             new LightNovels("Miatusu", 9.99)
     ));
 
-    // 1. ordernar a lista
-    // 2. pegar os titles que são os prices são menores igual a 4
     public static void main(String[] args) {
-        lightNovelsList.sort(Comparator.comparing(LightNovels::getTitle));
-        System.out.println(lightNovelsList);
-        List<String> titles = new ArrayList<>();
-        for (LightNovels lightNovels : lightNovelsList) {
-            if (lightNovels.getPrice() <= 4) {
-                titles.add(lightNovels.getTitle());
-            }
 
-            if (titles.size() == 3) {
-                break;
-            }
-        }
+        lightNovelsList.forEach(System.out::println);
 
-        System.out.println(titles);
+        long count = lightNovelsList.stream().distinct()
+                .filter(ls -> ls.getPrice() <= 4)
+                .count();
 
+        System.out.println(count);
 
     }
 }
