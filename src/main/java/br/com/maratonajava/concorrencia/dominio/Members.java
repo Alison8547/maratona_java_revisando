@@ -1,10 +1,14 @@
-package br.com.maratonajava.threads.dominio;
+package br.com.maratonajava.concorrencia.dominio;
 
 import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Members {
     private final Queue<String> emails = new ArrayBlockingQueue<>(10);
+    private final ReentrantLock lock = new ReentrantLock();
+    private final Condition condition = lock.newCondition();
     private boolean open = true;
 
     public boolean isOpen() {
@@ -18,30 +22,41 @@ public class Members {
     }
 
     public void addMemberEmail(String email) {
-        synchronized (emails) {
+        lock.lock();
+        try {
             System.out.printf("%s adicionou email na lista%n", threadName());
+
             emails.add(email);
-            emails.notifyAll();
+            condition.signalAll();
+        } finally {
+            lock.unlock();
         }
+
     }
 
     public String retrieveEmail() throws InterruptedException {
         System.out.println(threadName() + " checking if there are emails");
-        synchronized (emails) {
+        lock.lock();
+        try {
             while (emails.size() == 0) {
                 if (!open) return null;
                 System.out.println(threadName() + " Não tem email disponivel na lista! entrando em modo de espera...");
-                emails.wait();
+                condition.await();
             }
+        } finally {
+            lock.unlock();
         }
         return emails.poll();
     }
 
     public void close() {
         open = false;
-        synchronized (emails) {
+        lock.lock();
+        try {
             System.out.println(threadName() + " Notificando que não estamos mandando mais emails!");
-            emails.notifyAll();
+            condition.signalAll();
+        } finally {
+            lock.unlock();
         }
     }
 
