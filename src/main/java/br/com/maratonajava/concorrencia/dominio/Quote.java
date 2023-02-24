@@ -1,5 +1,7 @@
 package br.com.maratonajava.concorrencia.dominio;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public final class Quote {
     private final String store;
     private final double price;
@@ -13,7 +15,7 @@ public final class Quote {
 
     public static Quote newQuote(String store) {
         String[] values = store.split(":");
-        return new Quote(values[0], Double.parseDouble(values[1]), Discount.Code.valueOf(values[2]));
+        return new Quote(values[0], Double.parseDouble(values[1]), Discount.Code.values()[ThreadLocalRandom.current().nextInt(Discount.Code.values().length)]);
     }
 
     @Override
