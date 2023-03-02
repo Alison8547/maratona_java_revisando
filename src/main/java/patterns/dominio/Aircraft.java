@@ -20,4 +20,8 @@ public class Aircraft {
     public boolean BuySet(String seet) {
         return availableSeets.remove(seet);
     }
+
+    public String getName() {
+        return name;
+    }
 }

@@ -57,4 +57,8 @@ public class Person {
             return new Person(firstName, lastName, nickName, email);
         }
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
 }
